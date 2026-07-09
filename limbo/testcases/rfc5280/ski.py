@@ -29,7 +29,8 @@ def critical_ski(builder: Builder) -> None:
     leaf = builder.leaf_cert(
         root,
         aki=ext(
-            x509.AuthorityKeyIdentifier.from_issuer_public_key(key.public_key()), critical=False),
+            x509.AuthorityKeyIdentifier.from_issuer_public_key(key.public_key()), critical=False
+        ),
     )
 
     builder = builder.server_validation()
